@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Earth — Soil Jars</title>
+<style>
+:root {
+  --green: #285b3b;
+  --lime: #c8f169;
+  --orange: #ff8757;
+  --cream: #fff8e9;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", sans-serif;
+  background: var(--cream);
+  color: var(--green);
+}
+nav {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 22px 8%;
+}
+.logo { font-size: 25px; font-weight: 900; }
+nav a {
+  color: var(--green); text-decoration: none;
+  margin-left: 20px; font-weight: bold;
+}
+.hero {
+  min-height: 76vh; padding: 55px 8%;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 30px;
+  overflow: hidden; background: var(--lime);
+  border-radius: 0 0 65px 65px;
+}
+.hero-text { max-width: 560px; }
+h1 {
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: .98; margin: 15px 0;
+  letter-spacing: -4px;
+}
+.hero p { font-size: 19px; line-height: 1.7; }
+.tag {
+  background: white; display: inline-block;
+  border-radius: 30px; padding: 10px 16px;
+  font-size: 13px; font-weight: bold;
+}
+.btn {
+  display: inline-block; padding: 15px 25px;
+  border-radius: 40px; background: var(--green);
+  color: white; text-decoration: none;
+  font-weight: bold; transition: .25s;
+}
+.btn:hover { transform: translateY(-5px) rotate(-2deg); }
+.art {
+  position: relative; flex: 0 0 330px;
+  height: 340px; display: grid; place-items: center;
+}
+.sun {
+  position: absolute; width: 250px; height: 250px;
+  background: var(--orange); border-radius: 50%;
+  animation: pulse 4s infinite ease-in-out;
+}
+.jar {
+  position: relative; z-index: 2; width: 150px;
+  height: 200px; border: 5px solid white;
+  border-radius: 22px 22px 35px 35px;
+  background: linear-gradient(
+    to bottom, #b8dfeb 0 24%, #b47b4c 24% 42%,
+    #6d482e 42% 57%, #d7aa6e 57% 100%);
+  box-shadow: 14px 18px 0 #285b3b22;
+  transform: rotate(-7deg);
+  animation: float 3s ease-in-out infinite;
+}
+.jar:before {
+  content: ""; position: absolute;
+  width: 112px; height: 16px;
+  top: -15px; left: 14px; border-radius: 6px;
+  background: #e4a35d; border: 4px solid white;
+}
+.jar:after {
+  content: "GOOD SOIL"; position: absolute;
+  left: 15px; right: 15px; top: 95px;
+  background: var(--lime); text-align: center;
+  padding: 12px 0; font-size: 11px;
+  font-weight: 900; border-radius: 8px;
+}
+.spark {
+  position: absolute; font-size: 38px;
+  animation: float 2.5s ease-in-out infinite;
+}
+.s1 { top: 20px; right: 5px; }
+.s2 { bottom: 30px; left: 5px; animation-delay: 1s; }
+.s3 { top: 25px; left: 5px; animation-delay: .5s; }
+section { padding: 65px 8%; }
+.section-title { font-size: 38px; }
+.features {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+.feature {
+  padding: 28px; border-radius: 25px;
+  background: white; transition: .3s;
+}
+.feature:hover { transform: translateY(-8px); }
+.feature span { font-size: 40px; }
+footer { padding: 30px 8%; text-align: center; }
+@keyframes float {
+  0%,100% { transform: translateY(0) rotate(-7deg); }
+  50% { transform: translateY(-15px) rotate(-2deg); }
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@media(max-width:700px) {
+  .hero { flex-direction: column; text-align: center; }
+  .art { flex-basis: 300px; width: 100%; }
+  .features { grid-template-columns: 1fr; }
+  nav { padding: 20px 5%; }
+  nav a { margin-left: 10px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">🌱 little earth</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop ↗</a>
+  </div>
+</nav>
+
+<main>
+  <div class="hero">
+    <div class="hero-text">
+      <span class="tag">🌼 A LITTLE JAR OF NATURE</span>
+      <h1>Good things grow from the ground.</h1>
+      <p>
+        Meet our lovely little soil jars. Made for plant lovers,
+        curious minds, and anyone who wants a little more green
+        in their world.
+      </p>
+      <a class="btn" href="shop.html">Explore the jars →</a>
+    </div>
+    <div class="art" aria-label="Illustration of a soil jar">
+      <div class="sun"></div>
+      <div class="jar"></div>
+      <span class="spark s1">✳</span>
+      <span class="spark s2">🌱</span>
+      <span class="spark s3">✦</span>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="section-title">Small jars. Big nature energy.</h2>
+    <div class="features">
+      <div class="feature">
+        <span>🌿</span>
+        <h3>Earthy goodness</h3>
+        <p>Celebrate the simple beauty of soil and nature.</p>
+      </div>
+      <div class="feature">
+        <span>🫙</span>
+        <h3>Made to be loved</h3>
+        <p>Little jars that look lovely on desks and shelves.</p>
+      </div>
+      <div class="feature">
+        <span>🎁</span>
+        <h3>A unique little gift</h3>
+        <p>Something different for gardeners and plant fans.</p>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:40px">
+      <a class="btn" href="shop.html">Find your favourite jar</a>
+    </p>
+  </section>
+</main>
+
+<footer>🌎 Made with love for the little things. © 2026 Little Earth</footer>
+</body>
+</html>
